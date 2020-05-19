@@ -10,7 +10,7 @@ class Ingredient(models.Model):
     )
     image = ProcessedImageField(
         upload_to='ingredients',
-        default='ingredients/ingredient_default.jpg',
+        default='default.jpg',
         processors=[ResizeToFill(1024, 768)],
         format='JPEG',
         options=[{'quality': 60}]
@@ -27,15 +27,15 @@ class Ingredient(models.Model):
         verbose_name_plural = 'ingredients'
 
 
-class Dish(models.Model):
+class Recipe(models.Model):
     name = models.CharField(
         max_length=255,
         db_index=True
     )
 
     image = ProcessedImageField(
-        upload_to='dishes',
-        default='dishes/dish_default.jpg',
+        upload_to='recipes',
+        default='default.jpg',
         processors=[ResizeToFill(1024, 768)],
         format='JPEG',
         options=[{'quality': 60}]
@@ -43,7 +43,7 @@ class Dish(models.Model):
     description = models.TextField(
         blank=True
     )
-    recipe = models.TextField(
+    method = models.TextField(
         blank=True
     )
     ingredients = models.ManyToManyField(Ingredient)
@@ -53,4 +53,4 @@ class Dish(models.Model):
 
     class Meta:
         ordering = ['name']
-        verbose_name_plural = 'dishes'
+        verbose_name_plural = 'recipes'

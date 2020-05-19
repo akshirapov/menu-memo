@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(db_index=True, max_length=255, unique=True)),
-                ('image', imagekit.models.fields.ProcessedImageField(default='ingredients/ingredient_default.jpg', upload_to='ingredients')),
+                ('image', imagekit.models.fields.ProcessedImageField(default='default.jpg', upload_to='ingredients')),
                 ('description', models.TextField(blank=True)),
             ],
             options={
@@ -26,17 +26,17 @@ class Migration(migrations.Migration):
             },
         ),
         migrations.CreateModel(
-            name='Dish',
+            name='Recipe',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(db_index=True, max_length=255)),
-                ('image', imagekit.models.fields.ProcessedImageField(default='dishes/dish_default.jpg', upload_to='dishes')),
+                ('image', imagekit.models.fields.ProcessedImageField(default='default.jpg', upload_to='recipes')),
                 ('description', models.TextField(blank=True)),
-                ('recipe', models.TextField(blank=True)),
+                ('method', models.TextField(blank=True)),
                 ('ingredients', models.ManyToManyField(to='recipes.Ingredient')),
             ],
             options={
-                'verbose_name_plural': 'dishes',
+                'verbose_name_plural': 'recipes',
                 'ordering': ['name'],
             },
         ),
