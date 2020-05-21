@@ -1,19 +1,16 @@
 from django.db import models
-from imagekit.models import ProcessedImageField
-from imagekit.processors import ResizeToFill
 
 
 class Ingredient(models.Model):
     name = models.CharField(
         max_length=255,
-        db_index=True, unique=True
+        unique=True,
+        db_index=True
     )
-    image = ProcessedImageField(
+    image = models.ImageField(
         upload_to='ingredients',
         default='default.jpg',
-        processors=[ResizeToFill(1024, 768)],
-        format='JPEG',
-        options=[{'quality': 60}]
+        blank=True
     )
     description = models.TextField(
         blank=True
@@ -30,15 +27,13 @@ class Ingredient(models.Model):
 class Recipe(models.Model):
     name = models.CharField(
         max_length=255,
+        unique=True,
         db_index=True
     )
-
-    image = ProcessedImageField(
+    image = models.ImageField(
         upload_to='recipes',
         default='default.jpg',
-        processors=[ResizeToFill(1024, 768)],
-        format='JPEG',
-        options=[{'quality': 60}]
+        blank=True
     )
     description = models.TextField(
         blank=True
@@ -46,7 +41,10 @@ class Recipe(models.Model):
     method = models.TextField(
         blank=True
     )
-    ingredients = models.ManyToManyField(Ingredient)
+    ingredients = models.ManyToManyField(
+        Ingredient,
+        blank=True
+    )
 
     def __str__(self):
         return self.name
