@@ -1,0 +1,23 @@
+{% extends 'recipes/base.html' %}
+
+{% block content %}
+<div class="container">
+    <!-- Cards with recipes -->
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+        {% for recipe in recipes %}
+        <div class="col">
+            <!-- Card with a specific recipe -->
+            <div class="card mb-4 shadow-sm" style="height: 24rem;">
+                <div class="card-header text-center">
+                    <a href="{% url 'recipes:detail' recipe.id %}">{{ recipe.name }}</a>
+                </div>
+                <img src="{{ recipe.image.url }}" class="card-img-top rounded-0">
+                <div class="card-body">
+                    <p class="card-text">{{ recipe.description }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

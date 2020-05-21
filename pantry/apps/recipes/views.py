@@ -1,15 +1,29 @@
-from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse
+from django.shortcuts import render
+from django.views import generic
 from .models import Recipe
 
 
-def index(request):
-    recipes = Recipe.objects.all()
-    context = {'recipes': recipes}
-    return render(request, 'recipes/index.html', context)
+def home(request):
+    return render(request, 'recipes/home.html')
 
 
-def detail(request, recipe_id):
-    recipe = get_object_or_404(Recipe, pk=recipe_id)
-    context = {'recipe': recipe}
-    return render(request, 'recipes/detail.html', context)
+def about(request):
+    return render(request, 'recipes/about.html', {'title': 'About'})
+
+
+class RecipeListView(generic.ListView):
+    template_name = 'recipes/recipes.html'
+    context_object_name = 'recipes'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Recipes'
+        return context
+
+    def get_queryset(self):
+        return Recipe.objects.all()
+
+
+class RecipeDetailView(generic.DetailView):
+    model = Recipe
+    template_name = 'recipes/detail.html'
