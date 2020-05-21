@@ -3,17 +3,23 @@
 {% block content %}
 <div class="container">
     <!-- Cards with recipes -->
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
         {% for recipe in recipes %}
-        <div class="col">
+        <div class="col mb-4">
             <!-- Card with a specific recipe -->
-            <div class="card mb-4 shadow-sm" style="height: 24rem;">
-                <div class="card-header text-center">
-                    <a href="{% url 'recipes:detail' recipe.id %}">{{ recipe.name }}</a>
-                </div>
-                <img src="{{ recipe.image.url }}" class="card-img-top rounded-0">
+            <div class="card h-100 shadow-sm">
+                <img src="{{ recipe.image.url }}" class="card-img-top rounded-0" alt="recipe_image">
                 <div class="card-body">
-                    <p class="card-text">{{ recipe.description }}</p>
+                    <h5 class="card-title">
+                        {{ recipe.name }}
+                    </h5>
+                    <p class="card-text">
+                        {{ recipe.description }}
+                    </p>
+                </div>
+                <a class="card-link stretched-link" href="{% url 'recipes:detail' recipe.id %}"></a>
+                <div class="card-footer text-center">
+                    <small class="text-muted">Last updated 3 mins ago</small>
                 </div>
             </div>
         </div>

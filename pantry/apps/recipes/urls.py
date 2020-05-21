@@ -8,7 +8,8 @@ from .views import (
 app_name = 'recipes'
 
 urlpatterns = [
-    path('', views.home, name='home'),
+    # path('', views.home, name='home'),
+    path('', RecipeListView.as_view(), name='home'),
     path('about/', views.about, name='about'),
     path('recipes/', RecipeListView.as_view(), name='recipes'),
     path('recipe/<int:pk>/', RecipeDetailView.as_view(), name='detail'),
