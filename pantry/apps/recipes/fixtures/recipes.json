@@ -1,0 +1,428 @@
+[
+    {
+        "model": "recipes.ingredient",
+        "pk": 1,
+        "fields": {
+            "name": "Boquila",
+            "image": "default.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "recipes.ingredient",
+        "pk": 2,
+        "fields": {
+            "name": "Cicely, sweet cicely",
+            "image": "default.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "recipes.ingredient",
+        "pk": 3,
+        "fields": {
+            "name": "Partridgeberry",
+            "image": "default.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "recipes.ingredient",
+        "pk": 4,
+        "fields": {
+            "name": "Kakadu lime",
+            "image": "default.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "recipes.ingredient",
+        "pk": 5,
+        "fields": {
+            "name": "Artichoke",
+            "image": "default.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "recipes.ingredient",
+        "pk": 6,
+        "fields": {
+            "name": "Beet Greens",
+            "image": "default.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "recipes.ingredient",
+        "pk": 7,
+        "fields": {
+            "name": "Pickling Cucumbers",
+            "image": "default.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "recipes.ingredient",
+        "pk": 8,
+        "fields": {
+            "name": "Safflower",
+            "image": "default.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "recipes.ingredient",
+        "pk": 9,
+        "fields": {
+            "name": "Karonda",
+            "image": "default.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "recipes.ingredient",
+        "pk": 10,
+        "fields": {
+            "name": "Bacuri",
+            "image": "default.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "recipes.ingredient",
+        "pk": 11,
+        "fields": {
+            "name": "Keule",
+            "image": "default.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "recipes.ingredient",
+        "pk": 12,
+        "fields": {
+            "name": "Lawton blackberry",
+            "image": "default.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "recipes.ingredient",
+        "pk": 13,
+        "fields": {
+            "name": "Black apple",
+            "image": "default.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "recipes.ingredient",
+        "pk": 14,
+        "fields": {
+            "name": "Jiaogulan",
+            "image": "default.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "recipes.ingredient",
+        "pk": 15,
+        "fields": {
+            "name": "Greens",
+            "image": "default.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "recipes.ingredient",
+        "pk": 16,
+        "fields": {
+            "name": "Edamame",
+            "image": "default.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "recipes.ingredient",
+        "pk": 17,
+        "fields": {
+            "name": "Photinia",
+            "image": "default.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "recipes.ingredient",
+        "pk": 18,
+        "fields": {
+            "name": "Loquat",
+            "image": "default.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "recipes.ingredient",
+        "pk": 19,
+        "fields": {
+            "name": "Cantaloupe",
+            "image": "default.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "recipes.ingredient",
+        "pk": 20,
+        "fields": {
+            "name": "Bok Choi",
+            "image": "default.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "recipes.ingredient",
+        "pk": 21,
+        "fields": {
+            "name": "Juniper berry",
+            "image": "default.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "recipes.ingredient",
+        "pk": 22,
+        "fields": {
+            "name": "Allspice",
+            "image": "default.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "recipes.ingredient",
+        "pk": 23,
+        "fields": {
+            "name": "Pandan leaf",
+            "image": "default.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "recipes.ingredient",
+        "pk": 24,
+        "fields": {
+            "name": "Artemisia",
+            "image": "default.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "recipes.ingredient",
+        "pk": 25,
+        "fields": {
+            "name": "Curly",
+            "image": "default.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "recipes.ingredient",
+        "pk": 26,
+        "fields": {
+            "name": "Wax Beans",
+            "image": "default.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "recipes.ingredient",
+        "pk": 27,
+        "fields": {
+            "name": "Yams",
+            "image": "default.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "recipes.ingredient",
+        "pk": 28,
+        "fields": {
+            "name": "Chives",
+            "image": "default.jpg",
+            "description": ""
+        }
+    },
+    {
+        "model": "recipes.recipe",
+        "pk": 1,
+        "fields": {
+            "name": "Margherita Pizza",
+            "image": "default.jpg",
+            "description": "Atoms are used within a program to denote distinguished values.",
+            "method": "",
+            "ingredients": [
+                10,
+                4
+            ]
+        }
+    },
+    {
+        "model": "recipes.recipe",
+        "pk": 3,
+        "fields": {
+            "name": "Sushi",
+            "image": "default.jpg",
+            "description": "I don't even care.",
+            "method": "",
+            "ingredients": [
+                13,
+                20,
+                1,
+                28,
+                2,
+                25,
+                16,
+                15,
+                3
+            ]
+        }
+    },
+    {
+        "model": "recipes.recipe",
+        "pk": 4,
+        "fields": {
+            "name": "Swiss steak",
+            "image": "default.jpg",
+            "description": "She spent her earliest years reading classic literature, and writing poetry.",
+            "method": "",
+            "ingredients": [
+                22,
+                20,
+                15,
+                4,
+                11,
+                12,
+                23,
+                17,
+                8,
+                27
+            ]
+        }
+    },
+    {
+        "model": "recipes.recipe",
+        "pk": 5,
+        "fields": {
+            "name": "Chicken \u00e0 la King",
+            "image": "default.jpg",
+            "description": "It is also a garbage-collected runtime system.",
+            "method": "",
+            "ingredients": [
+                6,
+                20,
+                1,
+                2
+            ]
+        }
+    },
+    {
+        "model": "recipes.recipe",
+        "pk": 6,
+        "fields": {
+            "name": "Apple sauce",
+            "image": "default.jpg",
+            "description": "Haskell features a type system with type inference and lazy evaluation.",
+            "method": "",
+            "ingredients": [
+                24,
+                19,
+                2,
+                16,
+                21,
+                9,
+                3,
+                17,
+                8,
+                27
+            ]
+        }
+    },
+    {
+        "model": "recipes.recipe",
+        "pk": 7,
+        "fields": {
+            "name": "Funnel Cake",
+            "image": "default.jpg",
+            "description": "Do you have any idea why this is not working?",
+            "method": "",
+            "ingredients": [
+                10,
+                28,
+                25,
+                16,
+                9,
+                3,
+                8,
+                26,
+                27
+            ]
+        }
+    },
+    {
+        "model": "recipes.recipe",
+        "pk": 8,
+        "fields": {
+            "name": "Salad bar",
+            "image": "default.jpg",
+            "description": "Haskell features a type system with type inference and lazy evaluation.",
+            "method": "",
+            "ingredients": [
+                10,
+                6,
+                1,
+                15,
+                14,
+                4,
+                9,
+                12,
+                23,
+                7
+            ]
+        }
+    },
+    {
+        "model": "recipes.recipe",
+        "pk": 9,
+        "fields": {
+            "name": "Jambalaya",
+            "image": "default.jpg",
+            "description": "She spent her earliest years reading classic literature, and writing poetry.",
+            "method": "",
+            "ingredients": [
+                10,
+                6,
+                7,
+                27
+            ]
+        }
+    },
+    {
+        "model": "recipes.recipe",
+        "pk": 10,
+        "fields": {
+            "name": "Pastrami",
+            "image": "default.jpg",
+            "description": "Ports are created with the built-in function open_port.",
+            "method": "",
+            "ingredients": [
+                5,
+                1,
+                25,
+                4,
+                12,
+                18,
+                26,
+                27
+            ]
+        }
+    }
+]
