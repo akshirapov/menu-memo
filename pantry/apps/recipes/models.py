@@ -1,4 +1,6 @@
 from django.db import models
+from imagekit.models import ImageSpecField
+from imagekit.processors import ResizeToFill
 
 
 class Ingredient(models.Model):
@@ -6,14 +8,6 @@ class Ingredient(models.Model):
         max_length=255,
         unique=True,
         db_index=True
-    )
-    image = models.ImageField(
-        upload_to='ingredients',
-        default='default.jpg',
-        blank=True
-    )
-    description = models.TextField(
-        blank=True
     )
 
     def __str__(self):
@@ -32,8 +26,14 @@ class Recipe(models.Model):
     )
     image = models.ImageField(
         upload_to='recipes',
-        default='default.jpg',
+        default='',
         blank=True
+    )
+    image_thumbnail = ImageSpecField(
+        source='image',
+        processors=[ResizeToFill(640, 480)],
+        format='JPEG',
+        options={'quality': 60}
     )
     description = models.TextField(
         blank=True
