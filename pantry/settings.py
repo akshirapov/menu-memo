@@ -32,6 +32,10 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'pantry.apps.recipes',
+    'pantry.apps.users',
+
+    'crispy_forms',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -123,3 +127,6 @@ STATIC_URL = '/static/'
 # User-uploaded files
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+# Default template pack for crispy
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
