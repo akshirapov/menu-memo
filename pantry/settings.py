@@ -130,3 +130,6 @@ MEDIA_URL = '/media/'
 
 # Default template pack for crispy
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
+LOGIN_REDIRECT_URL = 'recipes:home'

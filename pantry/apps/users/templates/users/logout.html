@@ -1,0 +1,14 @@
+{% extends 'recipes/base.html' %}
+
+{% block content %}
+<div class="d-md-flex flex-items-center">
+    <div class="mx-auto col-md-6">
+        <div class="border-top pt-3">
+            <p>Thanks for spending some quality time with the site!</p>
+            <small class="text-muted">
+                <a href="{% url 'login' %}">Log In Again</a>
+            </small>
+        </div>
+    </div>
+</div>
+{% endblock content %}

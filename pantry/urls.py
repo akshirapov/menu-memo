@@ -21,8 +21,9 @@ from pantry.apps.users import views as user_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('login/', user_views.login, name='login'),
-    path('register/', user_views.register, name='register'),
+    path('register/', user_views.UserRegisterView.as_view(), name='register'),
+    path('login/', user_views.UserLoginView.as_view(), name='login'),
+    path('logout/', user_views.UserLogoutView.as_view(), name='logout'),
     path('', include('pantry.apps.recipes.urls')),
 ]
 
