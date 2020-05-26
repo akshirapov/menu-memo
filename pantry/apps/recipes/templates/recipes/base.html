@@ -46,7 +46,18 @@
                     <!-- Navbar Right Side -->
                     <div class="navbar-nav">
                         {% if user.is_authenticated %}
-                        <a class="nav-item nav-link border border-secondary rounded" href="{% url 'logout' %}">Logout</a>
+                        <div class="dropdown">
+                            <a class="nav-item nav-link dropdown-toggle" href="#" role="button"
+                                id="dropdownUserMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{ user.username }}
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownUserMenu">
+                                <a class="dropdown-item" href="#">Your profile</a>
+                                <a class="dropdown-item" href="#">Your recipes</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{% url 'logout' %}">Sign out</a>
+                            </div>
+                        </div>
                         {% else %}
                         <a class="nav-item nav-link" href="{% url 'login' %}">Sign in</a>
                         <a class="nav-item nav-link border border-secondary rounded" href="{% url 'register' %}">Sign up</a>

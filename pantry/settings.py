@@ -124,12 +124,18 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+
 # User-uploaded files
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
+
 # Default template pack for crispy
+
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+
+# The URL after login
 
 LOGIN_REDIRECT_URL = 'recipes:home'
