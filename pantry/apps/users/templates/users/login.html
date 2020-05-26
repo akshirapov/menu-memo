@@ -5,14 +5,14 @@
 {% block content %}
 <div class="d-md-flex flex-items-center">
     <div class="mx-auto col-sm-6">
-        <form method="POST" autocomplete="off" accept-charset="UTF-8">
+        <form method="POST">
             {% csrf_token %}
             <fieldset class="form-group">
                 <legend class="border-bottom mb-4">Log In</legend>
                 {{ form|crispy }}
             </fieldset>
             <div class="form-group">
-                <button class="btn btn-secondary btn-block" type="submit">Sign in</button>
+                <button class="btn btn-success btn-block" type="submit">Sign in</button>
             </div>
         </form>
         <div class="border-top pt-3 text-center">

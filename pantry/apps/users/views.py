@@ -8,8 +8,11 @@ from .forms import UserRegisterForm
 
 
 class UserRegisterView(CreateView):
-    template_name = 'users/register.html'
+    """
+    A view for registration a new user.
+    """
     form_class = UserRegisterForm
+    template_name = 'users/register.html'
     success_url = reverse_lazy('login')
 
     def form_valid(self, form):
@@ -18,10 +21,16 @@ class UserRegisterView(CreateView):
 
 
 class UserLoginView(LoginView):
+    """
+    A view for login user.
+    """
     template_name = 'users/login.html'
 
 
 class UserLogoutView(LogoutView):
+    """
+    A view for logout user.
+    """
     template_name = 'users/logout.html'
 
     def get(self, request, *args, **kwargs):

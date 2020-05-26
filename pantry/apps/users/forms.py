@@ -5,6 +5,9 @@ from django.utils.translation import gettext_lazy as _
 
 
 class UserRegisterForm(UserCreationForm):
+    """
+    A form containing form fields for register a new user.
+    """
     email = forms.EmailField()
 
     class Meta:
@@ -13,6 +16,7 @@ class UserRegisterForm(UserCreationForm):
 
     def clean_email(self):
         email = self.cleaned_data['email']
+        # check for the same email
         dupls = User.objects.exclude(pk=self.instance.pk).filter(email=email)
         if dupls.exists():
             raise forms.ValidationError(

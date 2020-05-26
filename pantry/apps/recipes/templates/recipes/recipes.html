@@ -1,5 +1,9 @@
 {% extends 'recipes/base.html' %}
 
+{% block title %}
+<title>Recipes</title>
+{% endblock title %}
+
 {% block content %}
 <!-- Cards with recipes -->
 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
@@ -8,9 +12,9 @@
         <!-- Card with a specific recipe -->
         <div class="card h-100 shadow-sm">
             {% if recipe.image %}
-            <img class="card-img-top rounded-0" src="{{ recipe.image_thumbnail.url }}" alt="Thumbnail">
+            <img class="card-img-top recipe-list-img rounded-0" src="{{ recipe.image_thumbnail.url }}" alt="Thumbnail">
             {% else %}
-            <svg class="card-img-top">
+            <svg class="card-img-top recipe-list-img">
               <rect width="100%" height="100%" fill="#55595c" />
               <text text-anchor="middle" x="50%" y="50%" fill="#eceeef">Thumbnail</text>
             </svg>
@@ -25,7 +29,7 @@
             </div>
             <a class="card-link stretched-link" href="{% url 'recipes:detail' recipe.id %}"></a>
             <div class="card-footer text-center">
-                <small class="text-muted">Last updated 3 mins ago</small>
+                <small class="text-muted">add by {{ recipe.author }}</small>
             </div>
         </div>
     </div>
