@@ -11,43 +11,43 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'recipes/main.css' %}">
 
     <!-- Title -->
     {% block title %}
-    <title>Pantry</title>
+        <title>Pantry</title>
     {% endblock title %}
 
 </head>
 
 <body>
 
-    <!-- Header -->
-    <header>
-        <!-- Navigation Bar -->
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-            <div class="container">
-                <a class="navbar-brand mr-4" href="{% url 'recipes:home' %}">Pantry</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
+<!-- Header -->
+<header>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand mr-4" href="{% url 'recipes:home' %}">Pantry</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
                     aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarToggle">
-                    <!-- Navbar Left Side -->
-                    <div class="navbar-nav mr-auto">
-                        <a class="nav-item nav-link" href="{% url 'recipes:recipes' %}">Recipes</a>
-                        <a class="nav-item nav-link" href="{% url 'recipes:about' %}">About</a>
-                    </div>
-                    <!-- Navbar Right Side -->
-                    <div class="navbar-nav">
-                        {% if user.is_authenticated %}
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarToggle">
+                <!-- Navbar Left Side -->
+                <div class="navbar-nav mr-auto">
+                    <a class="nav-item nav-link" href="{% url 'recipes:recipes' %}">Recipes</a>
+                    <a class="nav-item nav-link" href="{% url 'recipes:about' %}">About</a>
+                </div>
+                <!-- Navbar Right Side -->
+                <div class="navbar-nav">
+                    {% if user.is_authenticated %}
                         <a class="nav-item nav-link" href="{% url 'recipes:create' %}">New Recipe</a>
                         <div class="dropdown">
                             <a class="nav-item nav-link dropdown-toggle" href="#" role="button"
-                                id="dropdownUserMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                               id="dropdownUserMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 {{ user.username }}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="dropdownUserMenu">
@@ -57,48 +57,49 @@
                                 <a class="dropdown-item" href="{% url 'logout' %}">Sign out</a>
                             </div>
                         </div>
-                        {% else %}
+                    {% else %}
                         <a class="nav-item nav-link" href="{% url 'login' %}">Sign in</a>
-                        <a class="nav-item nav-link border border-secondary rounded" href="{% url 'register' %}">Sign up</a>
-                        {% endif %}
-                    </div>
+                        <a class="nav-item nav-link border border-secondary rounded" href="{% url 'register' %}">Sign
+                            up</a>
+                    {% endif %}
                 </div>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
+</header>
 
-    <!-- Main -->
-    <main role="main" class="mt-5">
-        <div class="py-5 bg-light">
-            <div class="container">
-                <div class="mx-auto col-md-6">
+<!-- Main -->
+<main role="main" class="mt-5">
+    <div class="py-5 bg-light">
+        <div class="container">
+            <div class="mx-auto col-md-6">
                 {% if messages %}
                     {% for message in messages %}
                         <div class="alert alert-{{ message.tags }}">{{ message }}</div>
                     {% endfor %}
                 {% endif %}
-                </div>
-                {% block content %}{% endblock content %}
             </div>
+            {% block content %}{% endblock content %}
         </div>
-    </main>
+    </div>
+</main>
 
-    <!-- Footer -->
-    <footer class="mt-3">
-        <div class="container">
-            <p class="text-muted text-center">&copy; 2020 Pantry</p>
-        </div>
-    </footer>
+<!-- Footer -->
+<footer class="mt-3">
+    <div class="container">
+        <p class="text-muted text-center">&copy; 2020 Pantry</p>
+    </div>
+</footer>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
 

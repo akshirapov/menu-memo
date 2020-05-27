@@ -7,7 +7,7 @@ from imagekit.processors import ResizeToFill
 
 class Ingredient(models.Model):
     """
-    Represents the recipe model.
+    Represents the ingredient model.
     """
     name = models.CharField(
         max_length=128,
